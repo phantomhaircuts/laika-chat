@@ -1,0 +1,36 @@
+<head>
+  <title>Laika</title>
+</head>
+
+<body>
+  <div class="container">
+  <header>
+    <h1>Laika</h1> <img class="logo" src="https://d13yacurqjgara.cloudfront.net/users/45889/screenshots/215664/dribble_laika.jpg">
+    {{> loginButtons}}
+      <form class="new-message">
+         <input type="text" name="text" placeholder="Type to add new message" />
+       </form>
+  </header>
+  <ul>
+  {{#each messages}}
+    {{> message}}
+  {{/each}}
+  </ul>
+  <div class="stage">
+  <figure class="sun"></figure>
+  <figure class="mercury"></figure>
+  <figure class="venus"></figure>
+  <div class="earthcontainer">
+    <figure class="moon"></figure>
+     <figure class="earth"></figure>
+  </div>
+</div>
+</div> <!--END Container-->
+</body>
+
+<template name="message">
+  <li>
+   <button class="delete">&times;</button>
+   <span class="text">{{username}}: {{text}}</span>
+ </li>
+</template>
